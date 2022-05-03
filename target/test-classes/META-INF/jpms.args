@@ -1,0 +1,4 @@
+--patch-module
+com.tugalsan.api.hex=_
+--add-reads
+com.tugalsan.api.hex=ALL-UNNAMED
