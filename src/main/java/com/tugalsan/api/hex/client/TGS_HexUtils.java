@@ -5,15 +5,16 @@ import java.util.stream.IntStream;
 
 public class TGS_HexUtils {
 
-    public static String toHex(int value_0_255) {
-        var sb = new StringBuilder();
-        sb.append(dictionary().charAt((value_0_255 - value_0_255 % 16) / 16));
-        sb.append(dictionary().charAt(value_0_255 % 16));
-        return sb.toString();
-    }
-
     private static String dictionary() {
         return "0123456789ABCDEF";
+    }
+
+    public static String toHex(int value_0_255) {
+        char[] dictionary = dictionary().toCharArray();
+        var sb = new StringBuilder();
+        sb.append(dictionary[(value_0_255 - value_0_255 % 16) / 16]);
+        sb.append(dictionary[value_0_255 % 16]);
+        return sb.toString();
     }
 
     public static String toHex(int[] values_0_255) {
