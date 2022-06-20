@@ -1,7 +1,7 @@
 package com.tugalsan.api.hex.client;
 
-import java.util.Locale;
-import java.util.stream.IntStream;
+import java.util.*;
+import java.util.stream.*;
 
 public class TGS_HexUtils {
 
