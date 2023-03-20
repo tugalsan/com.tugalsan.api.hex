@@ -20,7 +20,7 @@ public class TGS_HexUtils {
     public static String toHex(int[] values_0_255) {
         var sb = new StringBuilder(values_0_255.length * 2);
         IntStream.range(0, values_0_255.length).forEachOrdered(i -> sb.append(toHex(values_0_255[i])));
-        return sb.toString().toUpperCase(Locale.ROOT);
+        return sb.toString().toUpperCase();//NO TURKISH FIX NEEDED
     }
 
     public static int toInt(char hexChar1, char hexChar0) {
