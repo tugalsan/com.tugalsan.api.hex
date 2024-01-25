@@ -1,6 +1,5 @@
 package com.tugalsan.api.hex.client;
 
-import java.util.*;
 import java.util.stream.*;
 
 public class TGS_HexUtils {
@@ -10,7 +9,7 @@ public class TGS_HexUtils {
     }
 
     public static String toHex(int value_0_255) {
-        char[] dictionary = dictionary().toCharArray();
+        var dictionary = dictionary().toCharArray();
         var sb = new StringBuilder();
         sb.append(dictionary[(value_0_255 - value_0_255 % 16) / 16]);
         sb.append(dictionary[value_0_255 % 16]);
@@ -37,10 +36,10 @@ public class TGS_HexUtils {
     }
 
     public static String toHex(byte[] bytes) {
-        char[] hexChars = new char[bytes.length * 2];
-        char[] dictionary = dictionary().toCharArray();
-        for (int j = 0; j < bytes.length; j++) {
-            int v = bytes[j] & 0xFF;
+        var hexChars = new char[bytes.length * 2];
+        var dictionary = dictionary().toCharArray();
+        for (var j = 0; j < bytes.length; j++) {
+            var v = bytes[j] & 0xFF;
             hexChars[j * 2] = dictionary[v >>> 4];
             hexChars[j * 2 + 1] = dictionary[v & 0x0F];
         }
